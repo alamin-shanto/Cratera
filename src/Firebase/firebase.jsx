@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCdIbTOeEwbKnvpYcPUsgHneIwo3NeRyZ0",
-  authDomain: "cratera-395d4.firebaseapp.com",
-  projectId: "cratera-395d4",
-  storageBucket: "cratera-395d4.firebasestorage.app",
-  messagingSenderId: "1016830678438",
-  appId: "1:1016830678438:web:3bbd4006818df27a9d2b67",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_FIREBASE_APPID,
 };
 
 // Initialize Firebase
