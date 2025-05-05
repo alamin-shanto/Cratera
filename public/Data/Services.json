@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "",
+    "name": "Tech Trend Box",
+    "category": "Gadgets",
+    "price": "$29.99",
+    "frequency": "Monthly",
+    "description": "Latest tech gadgets and accessories."
+  },
+  {
+    "id": 2,
+    "thumbnail": "",
+    "name": "Book Lover Box",
+    "category": "Books",
+    "price": "$19.99",
+    "frequency": "Monthly",
+    "description": "Curated books for passionate readers."
+  },
+  {
+    "id": 3,
+    "thumbnail": "",
+    "name": "Fitness Gear Box",
+    "category": "Fitness",
+    "price": "$24.99",
+    "frequency": "Monthly",
+    "description": "Essential tools and tips for fitness buffs."
+  },
+  {
+    "id": 4,
+    "thumbnail": "",
+    "name": "Pet Treat Box",
+    "category": "Pets",
+    "price": "$14.99",
+    "frequency": "Monthly",
+    "description": "Delicious and healthy treats for your pets."
+  },
+  {
+    "id": 5,
+    "thumbnail": "",
+    "name": "Skincare Box",
+    "category": "Beauty",
+    "price": "$34.99",
+    "frequency": "Monthly",
+    "description": "Premium skincare essentials and samples."
+  },
+  {
+    "id": 6,
+    "thumbnail": "",
+    "name": "Snack Attack Box",
+    "category": "Food",
+    "price": "$12.99",
+    "frequency": "Monthly",
+    "description": "Tasty international snacks every month."
+  },
+
+  {
+    "id": 7,
+    "thumbnail": "",
+    "name": "Travel Essentials Box",
+    "category": "Travel",
+    "price": "$39.99",
+    "frequency": "Monthly",
+    "description": "Everything you need for your next adventure."
+  },
+  {
+    "id": 8,
+    "thumbnail": "",
+    "name": "Coffee Lovers Box",
+    "category": "Beverages",
+    "price": "$19.99",
+    "frequency": "Monthly",
+    "description": "Specialty coffees from around the world."
+  },
+  {
+    "id": 9,
+    "thumbnail": "",
+    "name": "DIY Craft Box",
+    "category": "Crafts",
+    "price": "$29.99",
+    "frequency": "Monthly",
+    "description": "Creative DIY kits for your crafting projects."
+  },
+  {
+    "id": 10,
+    "thumbnail": "",
+    "name": "Gaming Gear Box",
+    "category": "Gaming",
+    "price": "$49.99",
+    "frequency": "Monthly",
+    "description": "Essential accessories and merchandise for gamers."
+  },
+  {
+    "id": 11,
+    "thumbnail": "",
+    "name": "Luxury Watch Box",
+    "category": "Fashion",
+    "price": "$149.99",
+    "frequency": "Quarterly",
+    "description": "High-end watches for collectors and enthusiasts."
+  },
+  {
+    "id": 12,
+    "thumbnail": "",
+    "name": "Home Decor Box",
+    "category": "Home",
+    "price": "$39.99",
+    "frequency": "Monthly",
+    "description": "Stylish and trendy home decor items."
+  }
+]

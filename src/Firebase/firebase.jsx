@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "cratera-395d4",
   storageBucket: "cratera-395d4.firebasestorage.app",
   messagingSenderId: "1016830678438",
-  appId: "1:1016830678438:web:3bbd4006818df27a9d2b67"
+  appId: "1:1016830678438:web:3bbd4006818df27a9d2b67",
 };
 
 // Initialize Firebase

@@ -12,28 +12,28 @@ import NotFound from "../Pages/NotFound";
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout></Layout>}></Route>
-      <Route index element={<Home></Home>}></Route>
-      <Route path="login" element={<LogIn></LogIn>}></Route>
-      <Route path="register" element={<Register></Register>}></Route>
-      <Route
-        path="profile"
-        element={
-          <PrivateRoutes>
-            <Profile></Profile>
-          </PrivateRoutes>
-        }
-      ></Route>
-      <Route
-        path="service/:id"
-        element={
-          <PrivateRoutes>
-            <Details></Details>
-          </PrivateRoutes>
-        }
-      ></Route>
-      <Route path="login" element={<LogIn></LogIn>}></Route>
-      <Route path="*" element={<NotFound></NotFound>}></Route>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />}></Route>
+        <Route path="login" element={<LogIn />}></Route>
+        <Route path="register" element={<Register />}></Route>
+        <Route
+          path="profile"
+          element={
+            <PrivateRoutes>
+              <Profile />
+            </PrivateRoutes>
+          }
+        ></Route>
+        <Route
+          path="service/:id"
+          element={
+            <PrivateRoutes>
+              <Details />
+            </PrivateRoutes>
+          }
+        ></Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Route>
     </Routes>
   );
 };
