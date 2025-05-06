@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/5hwZzBC0/Tech-trend.jpg",
     "name": "Tech Trend Box",
     "category": "Gadgets",
     "price": "$29.99",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/qFY0PvLN/book-lover.jpg",
     "name": "Book Lover Box",
     "category": "Books",
     "price": "$19.99",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/rGwHwn49/workout-fitness-center.jpg",
     "name": "Fitness Gear Box",
     "category": "Fitness",
     "price": "$24.99",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/9H73PGP0/pet-treat.jpg",
     "name": "Pet Treat Box",
     "category": "Pets",
     "price": "$14.99",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/8wck4Ry/skincare.jpg",
     "name": "Skincare Box",
     "category": "Beauty",
     "price": "$34.99",
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/1t8TP7dS/food-bar.jpg",
     "name": "Snack Attack Box",
     "category": "Food",
     "price": "$12.99",
@@ -56,7 +56,7 @@
 
   {
     "id": 7,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/0yqLLpJM/travel-flatlay.jpg",
     "name": "Travel Essentials Box",
     "category": "Travel",
     "price": "$39.99",
@@ -65,7 +65,7 @@
   },
   {
     "id": 8,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/FbnYXYbt/coffee-break.jpg",
     "name": "Coffee Lovers Box",
     "category": "Beverages",
     "price": "$19.99",
@@ -74,7 +74,7 @@
   },
   {
     "id": 9,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/GQmpqcmp/construction-tools-flatlay.jpg",
     "name": "DIY Craft Box",
     "category": "Crafts",
     "price": "$29.99",
@@ -83,7 +83,7 @@
   },
   {
     "id": 10,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/j27kTvj/videogame-knoll.jpg",
     "name": "Gaming Gear Box",
     "category": "Gaming",
     "price": "$49.99",
@@ -92,7 +92,7 @@
   },
   {
     "id": 11,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/kVvmnKLK/modern-time-pieces.jpg",
     "name": "Luxury Watch Box",
     "category": "Fashion",
     "price": "$149.99",
@@ -101,7 +101,7 @@
   },
   {
     "id": 12,
-    "thumbnail": "",
+    "thumbnail": "https://i.ibb.co/Dg4J7Hn6/antique-posters-on-home-wall.jpg",
     "name": "Home Decor Box",
     "category": "Home",
     "price": "$39.99",
