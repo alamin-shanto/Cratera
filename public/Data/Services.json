@@ -2,7 +2,7 @@
   {
     "id": 1,
     "thumbnail": "https://i.ibb.co/5hwZzBC0/Tech-trend.jpg",
-    "name": "Tech Trend Box",
+    "name": "Tech Trend",
     "category": "Gadgets",
     "price": "$29.99",
     "frequency": "Monthly",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "thumbnail": "https://i.ibb.co/qFY0PvLN/book-lover.jpg",
-    "name": "Book Lover Box",
+    "name": "Book Lovers",
     "category": "Books",
     "price": "$19.99",
     "frequency": "Monthly",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "thumbnail": "https://i.ibb.co/rGwHwn49/workout-fitness-center.jpg",
-    "name": "Fitness Gear Box",
+    "name": "Fitness Gear",
     "category": "Fitness",
     "price": "$24.99",
     "frequency": "Monthly",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "thumbnail": "https://i.ibb.co/9H73PGP0/pet-treat.jpg",
-    "name": "Pet Treat Box",
+    "name": "Pet Treat",
     "category": "Pets",
     "price": "$14.99",
     "frequency": "Monthly",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "thumbnail": "https://i.ibb.co/8wck4Ry/skincare.jpg",
-    "name": "Skincare Box",
+    "name": "Skincare",
     "category": "Beauty",
     "price": "$34.99",
     "frequency": "Monthly",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "thumbnail": "https://i.ibb.co/1t8TP7dS/food-bar.jpg",
-    "name": "Snack Attack Box",
+    "name": "Snack Attack",
     "category": "Food",
     "price": "$12.99",
     "frequency": "Monthly",
@@ -57,7 +57,7 @@
   {
     "id": 7,
     "thumbnail": "https://i.ibb.co/0yqLLpJM/travel-flatlay.jpg",
-    "name": "Travel Essentials Box",
+    "name": "Travel Essentials",
     "category": "Travel",
     "price": "$39.99",
     "frequency": "Monthly",
@@ -66,7 +66,7 @@
   {
     "id": 8,
     "thumbnail": "https://i.ibb.co/FbnYXYbt/coffee-break.jpg",
-    "name": "Coffee Lovers Box",
+    "name": "Coffee Lovers",
     "category": "Beverages",
     "price": "$19.99",
     "frequency": "Monthly",
@@ -75,7 +75,7 @@
   {
     "id": 9,
     "thumbnail": "https://i.ibb.co/GQmpqcmp/construction-tools-flatlay.jpg",
-    "name": "DIY Craft Box",
+    "name": "DIY Craft",
     "category": "Crafts",
     "price": "$29.99",
     "frequency": "Monthly",
@@ -84,7 +84,7 @@
   {
     "id": 10,
     "thumbnail": "https://i.ibb.co/j27kTvj/videogame-knoll.jpg",
-    "name": "Gaming Gear Box",
+    "name": "Gaming Gear",
     "category": "Gaming",
     "price": "$49.99",
     "frequency": "Monthly",
@@ -93,7 +93,7 @@
   {
     "id": 11,
     "thumbnail": "https://i.ibb.co/kVvmnKLK/modern-time-pieces.jpg",
-    "name": "Luxury Watch Box",
+    "name": "Luxury Watch",
     "category": "Fashion",
     "price": "$149.99",
     "frequency": "Quarterly",
@@ -102,7 +102,7 @@
   {
     "id": 12,
     "thumbnail": "https://i.ibb.co/Dg4J7Hn6/antique-posters-on-home-wall.jpg",
-    "name": "Home Decor Box",
+    "name": "Home Decor",
     "category": "Home",
     "price": "$39.99",
     "frequency": "Monthly",

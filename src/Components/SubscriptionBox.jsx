@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SubscriptionBox = () => {
   const [services, setServices] = useState([]);
   const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/Data/Services.json")
@@ -16,6 +17,10 @@ const SubscriptionBox = () => {
   }, []);
 
   const displayService = showAll ? services : services.slice(0, 6);
+
+  const handleViewMore = (service) => {
+    navigate(`/service/${service.id}`, { state: { service } });
+  };
 
   return (
     <section>
@@ -50,12 +55,12 @@ const SubscriptionBox = () => {
                 <p className="text-xs lg:text-sm">{service.description}</p>
               </div>
 
-              <Link
-                to={`/service/${service.id}`}
-                className="text-blue-400 text-xs lg:text-sm"
+              <button
+                onClick={() => handleViewMore(service)}
+                className="text-blue-400 text-xs lg:text-sm cursor-pointer"
               >
                 View More
-              </Link>
+              </button>
             </div>
           ))}
         </div>
@@ -64,7 +69,7 @@ const SubscriptionBox = () => {
       {services.length > 6 && (
         <div className="text-center my-5">
           <button
-            className="bg-[#3b82f6] text-white px-5 py-3 rounded-2xl"
+            className="bg-[#3b82f6] text-white px-5 py-3 rounded-2xl cursor-pointer"
             onClick={() => setShowAll(!showAll)}
           >
             {showAll ? "Show Less" : "Show More"}
