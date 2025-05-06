@@ -20,6 +20,13 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img
+            src="assets/winter-shore-line.jpg"
+            alt="slider-1"
+            className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
+          ></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
             src="assets/winter-sky-and-trees.jpg"
             alt="slider-1"
             className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
@@ -27,7 +34,21 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img
+            src="assets/winter-season-by-the-shore.jpg"
+            alt="slider-1"
+            className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
+          ></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
             src="assets/winter-woods-scene.jpg"
+            alt="slider-1"
+            className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
+          ></img>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="assets/dried-winter-wildflowers.jpg"
             alt="slider-1"
             className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
           ></img>

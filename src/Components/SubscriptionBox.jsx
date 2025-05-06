@@ -19,7 +19,7 @@ const SubscriptionBox = () => {
 
   return (
     <section>
-      <h2 className="Text-lg lg:text-3xl font-bold my-10 ml-5 lg:ml-0">
+      <h2 className="Text-2xl lg:text-3xl font-extrabold my-10 ml-5 lg:ml-0">
         Subscription Services
       </h2>
       <div className="flex justify-center mx-5">
@@ -27,7 +27,7 @@ const SubscriptionBox = () => {
           {displayService.map((service) => (
             <div
               key={service.id}
-              className="border text-center max-w-[350px] rounded-2xl bg-[#f0f4f8] my-5"
+              className="border text-center max-w-[350px] rounded-2xl bg-[#f0f4f8]"
             >
               <img
                 src={service.thumbnail}

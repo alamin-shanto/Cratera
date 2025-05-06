@@ -37,7 +37,9 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-4xl text-bold jacquard-24">Cratera</a>
+        <a className="btn btn-ghost text-4xl text-extrabold jacquard-24">
+          Cratera
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
