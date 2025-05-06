@@ -31,21 +31,21 @@ const Home = () => {
         >
           <SwiperSlide>
             <img
-              src="Assets/overhead-view-of-a-sled-dog-team-cutting-through-winter-forest.jpg"
+              src="assets/overhead-view-of-a-sled-dog-team-cutting-through-winter-forest.jpg"
               alt="slider-1"
               className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
             ></img>
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="Assets/winter-sky-and-trees.jpg"
+              src="assets/winter-sky-and-trees.jpg"
               alt="slider-1"
               className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
             ></img>
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="Assets/winter-woods-scene.jpg"
+              src="assets/winter-woods-scene.jpg"
               alt="slider-1"
               className="w-full h-[40vh] lg:h-[60vh] xl:h-[40vh] object-cover rounded-xl"
             ></img>
