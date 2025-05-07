@@ -9,6 +9,7 @@ const Profile = () => {
   const [photoURL, setPhotoURL] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,6 +36,7 @@ const Profile = () => {
         photoURL: photoURL,
       });
       setSuccess("Profile Updated successfully");
+      setIsEditing(false);
     } catch (err) {
       console.error("Update error", err);
       setError("Failed to update Profile");
@@ -61,32 +63,44 @@ const Profile = () => {
           <b>Email:</b> {user.email}
         </p>
 
-        <form onSubmit={handleUpdate} className="space-y-5">
-          <input
-            type="text"
-            placeholder="Enter Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 rounded-2xl bg-white"
-          />
-          <input
-            type="text"
-            placeholder="Photo URL"
-            value={photoURL}
-            onChange={(e) => setPhotoURL(e.target.value)}
-            className="w-full p-2 rounded-2xl bg-white"
-          />
+        {!isEditing && (
           <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-2xl hover:bg-blue-700"
+            onClick={() => setIsEditing(true)}
+            className="w-full bg-blue-600 rounded-2xl hover:bg-blue-700 py-2 text-white"
           >
             {" "}
-            Save Changes
+            Edit Profile
           </button>
+        )}
 
-          {success && <p className="text-green-600 text-center">{success}</p>}
-          {error && <p className="text-red-500 text-center">{error}</p>}
-        </form>
+        {isEditing && (
+          <form onSubmit={handleUpdate} className="space-y-5">
+            <input
+              type="text"
+              placeholder="Enter Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full p-2 rounded-2xl bg-white"
+            />
+            <input
+              type="text"
+              placeholder="Photo URL"
+              value={photoURL}
+              onChange={(e) => setPhotoURL(e.target.value)}
+              className="w-full p-2 rounded-2xl bg-white"
+            />
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-2 rounded-2xl hover:bg-blue-700"
+            >
+              {" "}
+              Save Changes
+            </button>
+
+            {success && <p className="text-green-600 text-center">{success}</p>}
+            {error && <p className="text-red-500 text-center">{error}</p>}
+          </form>
+        )}
       </div>
     </div>
   );
