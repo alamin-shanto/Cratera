@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "./../Firebase/firebase";
 import {
   GoogleAuthProvider,
@@ -39,7 +39,7 @@ const LogIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center m-5 lg:my-20">
       <form
         onSubmit={handleSubmit}
         className="bg-blue-200 p-5 rounded-2xl shadow-md w-full max-w-sm"
@@ -77,6 +77,13 @@ const LogIn = () => {
         >
           Sign In With Google
         </button>
+
+        <p className="text-center mt-2">
+          Don't have an Account?{" "}
+          <Link to="/register" className="text-blue-900 font-bold">
+            Sign up here
+          </Link>{" "}
+        </p>
       </form>
     </div>
   );

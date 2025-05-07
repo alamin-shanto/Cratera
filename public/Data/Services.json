@@ -6,7 +6,9 @@
     "category": "Gadgets",
     "price": "$29.99",
     "frequency": "Monthly",
-    "description": "Latest tech gadgets and accessories."
+    "description": "Latest tech gadgets and accessories.",
+    "ratings": "4.6",
+    "Reviews": "145"
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "category": "Books",
     "price": "$19.99",
     "frequency": "Monthly",
-    "description": "Curated books for passionate readers."
+    "description": "Curated books for passionate readers.",
+    "ratings": "4.8",
+    "Reviews": "120"
   },
   {
     "id": 3,
@@ -24,7 +28,9 @@
     "category": "Fitness",
     "price": "$24.99",
     "frequency": "Monthly",
-    "description": "Essential tools and tips for fitness buffs."
+    "description": "Essential tools and tips for fitness buffs.",
+    "ratings": "4.2",
+    "Reviews": "170"
   },
   {
     "id": 4,
@@ -33,7 +39,9 @@
     "category": "Pets",
     "price": "$14.99",
     "frequency": "Monthly",
-    "description": "Delicious and healthy treats for your pets."
+    "description": "Delicious and healthy treats for your pets.",
+    "ratings": "4.9",
+    "Reviews": "90"
   },
   {
     "id": 5,
@@ -42,7 +50,9 @@
     "category": "Beauty",
     "price": "$34.99",
     "frequency": "Monthly",
-    "description": "Premium skincare essentials and samples."
+    "description": "Premium skincare essentials and samples.",
+    "ratings": "4.9",
+    "Reviews": "178"
   },
   {
     "id": 6,
@@ -51,7 +61,9 @@
     "category": "Food",
     "price": "$12.99",
     "frequency": "Monthly",
-    "description": "Tasty international snacks every month."
+    "description": "Tasty international snacks every month.",
+    "ratings": "4.5",
+    "Reviews": "148"
   },
 
   {
@@ -61,7 +73,9 @@
     "category": "Travel",
     "price": "$39.99",
     "frequency": "Monthly",
-    "description": "Everything you need for your next adventure."
+    "description": "Everything you need for your next adventure.",
+    "ratings": "4.7",
+    "Reviews": "121"
   },
   {
     "id": 8,
@@ -70,7 +84,9 @@
     "category": "Beverages",
     "price": "$19.99",
     "frequency": "Monthly",
-    "description": "Specialty coffees from around the world."
+    "description": "Specialty coffees from around the world.",
+    "ratings": "4.6",
+    "Reviews": "210"
   },
   {
     "id": 9,
@@ -79,7 +95,9 @@
     "category": "Crafts",
     "price": "$29.99",
     "frequency": "Monthly",
-    "description": "Creative DIY kits for your crafting projects."
+    "description": "Creative DIY kits for your crafting projects.",
+    "ratings": "4.4",
+    "Reviews": "180"
   },
   {
     "id": 10,
@@ -88,7 +106,9 @@
     "category": "Gaming",
     "price": "$49.99",
     "frequency": "Monthly",
-    "description": "Essential accessories and merchandise for gamers."
+    "description": "Essential accessories and merchandise for gamers.",
+    "ratings": "4.3",
+    "Reviews": "128"
   },
   {
     "id": 11,
@@ -97,7 +117,9 @@
     "category": "Fashion",
     "price": "$149.99",
     "frequency": "Quarterly",
-    "description": "High-end watches for collectors and enthusiasts."
+    "description": "High-end watches for collectors and enthusiasts.",
+    "ratings": "4.7",
+    "Reviews": "76"
   },
   {
     "id": 12,
@@ -106,6 +128,8 @@
     "category": "Home",
     "price": "$39.99",
     "frequency": "Monthly",
-    "description": "Stylish and trendy home decor items."
+    "description": "Stylish and trendy home decor items.",
+    "ratings": "4.7",
+    "Reviews": "190"
   }
 ]
