@@ -83,9 +83,12 @@ const NavBar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn m-1 bg-blue-400 rounded-2xl text-white"
+              className="avatar tooltip tooltip-bottom"
+              data-tip={user.displayName || "User"}
             >
-              See More <BookDown />
+              <div className="w-10 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
+                <img src={user.photoURL} alt="User Avatar" />
+              </div>
             </div>
             <ul
               tabIndex={0}
@@ -95,7 +98,7 @@ const NavBar = () => {
                 <Link to="profile"> Profile</Link>
               </li>
               <li>
-                <Link to="">Subscriptions</Link>
+                <Link to="/subscribe">Subscriptions</Link>
               </li>
               <li>
                 <button onClick={handleLogout}>Log Out</button>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import auth from "../Firebase/firebase";
+import { auth } from "../Firebase/firebase";
 import { updateProfile } from "firebase/auth";
 
 const Profile = () => {

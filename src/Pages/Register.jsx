@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import auth from "../Firebase/firebase";
+import { auth } from "../Firebase/firebase";
 
 const Register = () => {
   const [firstname, setFirstname] = useState("");

@@ -8,6 +8,7 @@ import Profile from "../Pages/Profile";
 import PrivateRoutes from "./PrivateRoutes";
 import Details from "../Pages/Details";
 import NotFound from "../Pages/NotFound";
+import Subscribe from "../Pages/Subscribe";
 
 const Router = () => {
   return (
@@ -29,6 +30,14 @@ const Router = () => {
           element={
             <PrivateRoutes>
               <Details />
+            </PrivateRoutes>
+          }
+        ></Route>
+        <Route
+          path="subscribe"
+          element={
+            <PrivateRoutes>
+              <Subscribe />
             </PrivateRoutes>
           }
         ></Route>
