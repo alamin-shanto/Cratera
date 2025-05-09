@@ -3,6 +3,11 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { BookDown } from "lucide-react";
 import AuthContext from "../Context/AuthContext";
 
+const activeNavLink = ({ isActive }) =>
+  `font-bold ${
+    isActive ? "bg-blue-500 text-white shadow" : "hover:bg-blue-100 text-white"
+  }`;
+
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -42,7 +47,7 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <NavLink to="/" className="font-bold">
+              <NavLink to="/" className={activeNavLink}>
                 Home
               </NavLink>
             </li>
@@ -50,7 +55,9 @@ const NavBar = () => {
               <a>Parent</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <NavLink to="/blogs" className={activeNavLink}>
+                Blogs
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -64,7 +71,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <NavLink to="/" className="font-bold">
+            <NavLink to="/" className={activeNavLink}>
               Home
             </NavLink>
           </li>
@@ -72,7 +79,9 @@ const NavBar = () => {
             <a>Item 2</a>
           </li>
           <li>
-            <a>Item 3</a>
+            <NavLink to="/blogs" className={activeNavLink}>
+              Blogs
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -83,7 +92,7 @@ const NavBar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="avatar tooltip tooltip-bottom"
+              className="avatar tooltip tooltip-left"
               data-tip={user.displayName || "User"}
             >
               <div className="w-10 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">

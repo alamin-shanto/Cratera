@@ -25,7 +25,7 @@ const Details = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <div>
+      <div className="bg-gradient-to-r from-slate-700 to-gray-800 p-5 rounded-2xl">
         <h1 className="text-3xl font-bold mb-4">{service.name}</h1>
         <img
           src={service.thumbnail}
@@ -33,7 +33,7 @@ const Details = () => {
           className="w-full h-64 object-cover rounded-2xl mb-5"
         />
         <p className="text-lg text-gray-700 mb-5"> {service.description}</p>
-        <div>
+        <div className="">
           <p>
             <b>Price:</b> {service.price}
           </p>
@@ -42,8 +42,7 @@ const Details = () => {
             {" "}
             <b>Category:</b> {service.category}
           </p>
-        </div>
-        <div>
+
           <p>
             <b>Frequency:</b> {service.frequency}
           </p>

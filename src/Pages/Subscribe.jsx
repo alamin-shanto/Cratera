@@ -77,26 +77,36 @@ const Subscribe = () => {
 
   return (
     <div className="p-5">
-      <h2 className="text-4xl text-center font-bold my-5">My Subscriptions</h2>
+      <h2 className="text-4xl text-center font-extrabold my-10 text-[var(--p)]">
+        My Subscriptions
+      </h2>
 
       {subs.length === 0 ? (
-        <p>No Subscriptions Yet</p>
+        <p className="text-center text-s">No Subscriptions Yet</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {" "}
           {subs.map((sub, i) => (
             <div
               key={i}
-              className="bg-blue-200 p-5 rounded-2xl shadow-md hover:shadow-xl transition"
+              className="bg-gradient-to-br from-[var(--n)] to-[var(--b3)]  p-5 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105"
             >
-              <img src={sub.serviceImage} alt="" />
-              <h4>{sub.serviceName}</h4>
-              <p>{sub.serviceDescription}</p>
-              <p>
-                <b>Price:</b> ${sub.ServicePrice}
+              <img
+                src={sub.serviceImage}
+                alt=""
+                className="w-full h-48 object-cover rounded-xl mb-4"
+              />
+              <h4 className="text-2xl font-bold text-[var(--nc)] mb-2">
+                {sub.serviceName}
+              </h4>
+              <p className="text-sm text-[var(--s)] mb-4 line-clamp-3">
+                {sub.serviceDescription}
+              </p>
+              <p className="text-md text-[var(--in)] font-semibold">
+                <b>Price:</b> {sub.ServicePrice}
               </p>
               <button
-                className="bg-blue-600 p-3 text-white mt-5 rounded-2xl"
+                className="bg-[var(--p)] hover:bg-[var(--er)] p-3 text-white mt-5 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                 onClick={() => cancelSubscription(sub.id)}
               >
                 Cancel Subscription

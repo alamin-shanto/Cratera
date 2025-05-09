@@ -24,7 +24,7 @@ const SubscriptionBox = () => {
 
   return (
     <section>
-      <h2 className="Text-2xl lg:text-3xl font-extrabold my-10 ml-5 lg:ml-0">
+      <h2 className="Text-3xl lg:text-4xl font-extrabold my-10 ml-5 lg:ml-0 text-[var(--n)]">
         Subscription Services
       </h2>
       <div className="flex justify-center mx-5">
@@ -32,32 +32,32 @@ const SubscriptionBox = () => {
           {displayService.map((service) => (
             <div
               key={service.id}
-              className="border text-center max-w-[350px] rounded-2xl bg-[#f0f4f8]"
+              className="border text-center max-w-[350px] rounded-2xl bg-gradient-to-r from-slate-700 to-gray-800"
             >
               <img
                 src={service.thumbnail}
                 alt={service.name}
                 className="rounded-t-2xl"
               ></img>
-              <div>
-                <h3 className="font-bold text-lg lg:text-3xl">
+              <div className="m-2 lg:m-5">
+                <h3 className="font-bold text-xl lg:text-3xl">
                   {service.name}
                 </h3>
-                <div className="flex gap-5 justify-center">
-                  <p className="font-semibold text-md lg:text-xl">
+                <div className="flex gap-5 justify-center lg:space-y-1">
+                  <p className="font-semibold text-sm lg:text-xl">
                     {service.category}
                   </p>
-                  <p className="font-semibold text-md lg:text-xl">
+                  <p className="font-semibold text-sm lg:text-xl">
                     {service.price}
                   </p>
                 </div>
 
-                <p className="text-xs lg:text-sm">{service.description}</p>
+                <p className="text-[10px] lg:text-sm">{service.description}</p>
               </div>
 
               <button
                 onClick={() => handleViewMore(service)}
-                className="text-blue-400 text-xs lg:text-sm cursor-pointer"
+                className="text-blue-400 text-xs lg:text-sm cursor-pointer mb-2 lg:mb-5 font-bold"
               >
                 View More
               </button>

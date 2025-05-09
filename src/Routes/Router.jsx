@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Details from "../Pages/Details";
 import NotFound from "../Pages/NotFound";
 import Subscribe from "../Pages/Subscribe";
+import Blogs from "../Pages/Blogs";
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
         <Route index element={<Home />}></Route>
         <Route path="login" element={<LogIn />}></Route>
         <Route path="register" element={<Register />}></Route>
+        <Route path="blogs" element={<Blogs />}></Route>
         <Route
           path="profile"
           element={
