@@ -52,7 +52,9 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li>
-              <a>Parent</a>
+              <NavLink to="/contacts" className={activeNavLink}>
+                Contact Us
+              </NavLink>
             </li>
             <li>
               <NavLink to="/blogs" className={activeNavLink}>
@@ -76,7 +78,9 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <a>Item 2</a>
+            <NavLink to="/contacts" className={activeNavLink}>
+              Contact Us
+            </NavLink>
           </li>
           <li>
             <NavLink to="/blogs" className={activeNavLink}>

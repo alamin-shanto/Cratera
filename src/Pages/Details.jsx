@@ -25,6 +25,9 @@ const Details = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-4xl text-center font-extrabold my-10 text-[var(--p)]">
+        Subscribe Now
+      </h1>
       <div className="bg-gradient-to-r from-slate-700 to-gray-800 p-5 rounded-2xl">
         <h1 className="text-3xl font-bold mb-4 text-[var(--p)]">
           {service.name}

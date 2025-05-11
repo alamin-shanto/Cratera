@@ -8,8 +8,9 @@ const Footer = () => {
         <NavLink to="/" className="link link-hover font-bold">
           Home
         </NavLink>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
+        <NavLink to="/contacts" className="link link-hover font-bold">
+          Contact Us
+        </NavLink>
         <NavLink to="/blogs" className="link link-hover font-bold">
           Blogs
         </NavLink>

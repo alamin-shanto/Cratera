@@ -10,6 +10,7 @@ import Details from "../Pages/Details";
 import NotFound from "../Pages/NotFound";
 import Subscribe from "../Pages/Subscribe";
 import Blogs from "../Pages/Blogs";
+import Contacts from "../Pages/Contacts";
 
 const Router = () => {
   return (
@@ -19,6 +20,7 @@ const Router = () => {
         <Route path="login" element={<LogIn />}></Route>
         <Route path="register" element={<Register />}></Route>
         <Route path="blogs" element={<Blogs />}></Route>
+        <Route path="contacts" element={<Contacts />}></Route>
         <Route
           path="profile"
           element={
