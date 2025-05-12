@@ -8,14 +8,67 @@ import {
   query,
   deleteDoc,
   doc,
+  orderBy,
 } from "firebase/firestore";
 import { useLocation } from "react-router-dom";
 import NoSubscription from "./NoSubscription";
 
 const Subscribe = () => {
   const [subs, setSubs] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState("");
   const location = useLocation();
   const service = location.state?.service;
+  const hasSubscribed = useRef(false);
+
+  const loadReviews = async () => {
+    if (!service) return;
+    try {
+      const reviewRef = collection(db, "reviews");
+      const q = query(
+        reviewRef,
+        where("serviceName", "==", service.name),
+        orderBy("createdAt", "desc")
+      );
+      const snapshot = await getDocs(q);
+      const reviewList = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setReviews(reviewList);
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
+  };
+
+  const submitReview = async () => {
+    const user = auth.currentUser;
+    if (!user || !service || !rating || !reviewText.trim()) return;
+
+    const ratingValue = Number(rating);
+    if (ratingValue < 1 || ratingValue > 5) {
+      alert("Rating must be between 1 to 5");
+      return;
+    }
+    try {
+      const review = {
+        uid: user.uid,
+        userName: user.displayName || "Anonymous",
+        serviceName: service.name,
+        reviewText,
+        rating: ratingValue,
+        createdAt: new Date(),
+      };
+      const reviewRef = collection(db, "reviews");
+      await addDoc(reviewRef, review);
+      setReviewText("");
+      setRating("");
+      await loadReviews();
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    }
+  };
 
   const cancelSubscription = async (subId) => {
     try {
@@ -27,8 +80,6 @@ const Subscribe = () => {
       console.log("error canceling subscription", error);
     }
   };
-
-  const hasSubscribed = useRef(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -115,6 +166,53 @@ const Subscribe = () => {
               </div>
             ))}
           </div>{" "}
+          <div className="bg-[var(--n)] mx-auto my-10 max-w-2xl rounded-2xl shadow-md p-5">
+            <h3 className="text-bold text-2xl text-center text-[var(--p)] my-5">
+              Leave a review
+            </h3>
+            <textarea
+              placeholder="Write your review here..."
+              value={reviewText}
+              onChange={(e) => setReviewText(e.target.value)}
+              className="bg-white w-full border rounded-2xl p-5 text-[var(--n)] mb-5"
+              rows="4"
+            ></textarea>
+            <input
+              type="number"
+              placeholder="Rating (1-5)"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+              className="w-full border rounded-2xl p-5 mb-5"
+              min="1"
+              max="5"
+            />
+            <button
+              onClick={submitReview}
+              className="w-full rounded-2xl px-10 py-5 bg-blue-400 hover:bg-blue-800"
+            >
+              {" "}
+              Submit Review
+            </button>
+          </div>
+          <div className="max-w-4xl rounded-2xl shadow-md mx-auto mt-10 bg-[var(--n)] p-5">
+            <h4 className="text-2xl font-bold mb-5 text-center">
+              User Reviews
+            </h4>
+            {reviews.length === 0 ? (
+              <p className="font-medium text-center">No Reviews Yet</p>
+            ) : (
+              reviews.map((r) => (
+                <div
+                  key={r.id}
+                  className="border p-5 mb-5 rounded-2xl shadow-lg bg-[var(--b2)]"
+                >
+                  <p className="font-semibold">{r.userName}</p>
+                  <p className="">{r.rating}</p>
+                  <p className="">{r.reviewText}</p>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       )}
     </div>
