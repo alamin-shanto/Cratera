@@ -11,6 +11,8 @@ import NotFound from "../Pages/NotFound";
 import Subscribe from "../Pages/Subscribe";
 import Blogs from "../Pages/Blogs";
 import Contacts from "../Pages/Contacts";
+import Terms from "../Pages/Terms";
+import PrivacyPolicy from "../Pages/PrivacyPolicy";
 
 const Router = () => {
   return (
@@ -45,8 +47,10 @@ const Router = () => {
             </PrivateRoutes>
           }
         ></Route>
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="terms" element={<Terms />}></Route>
+        <Route path="privacy" element={<PrivacyPolicy />}></Route>
       </Route>
+      <Route path="*" element={<NotFound />}></Route>
     </Routes>
   );
 };

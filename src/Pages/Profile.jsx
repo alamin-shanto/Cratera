@@ -46,8 +46,8 @@ const Profile = () => {
   if (!user) return null;
 
   return (
-    <div className="flex justify-center items-center my-10">
-      <div className="p-5 rounded-2xl shadow-md w-full max-w-md bg-blue-200">
+    <div className="flex justify-center items-center m-10">
+      <div className="p-5 rounded-2xl shadow-md w-full max-w-md bg-[var(--n)]">
         <h2 className="text-2xl font-bold mb-4 text-center">My Profile</h2>
         {user.photoURL && (
           <img
@@ -56,10 +56,10 @@ const Profile = () => {
             className="w-24 h-24 mx-auto rounded-full mb-4"
           ></img>
         )}
-        <p className="text-center mb-6">
+        <p className="text-center mb-6 text-sm lg:text-lg">
           <b>User Name:</b> {user.displayName}
         </p>
-        <p className="text-center mb-6">
+        <p className="text-center mb-6 text-sm lg:text-lg">
           <b>Email:</b> {user.email}
         </p>
 
@@ -80,14 +80,14 @@ const Profile = () => {
               placeholder="Enter Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full p-2 rounded-2xl bg-white"
+              className="w-full p-2 rounded-2xl bg-white text-[var(--n)]"
             />
             <input
               type="text"
               placeholder="Photo URL"
               value={photoURL}
               onChange={(e) => setPhotoURL(e.target.value)}
-              className="w-full p-2 rounded-2xl bg-white"
+              className="w-full p-2 rounded-2xl bg-white text-[var(--n)]"
             />
             <button
               type="submit"
