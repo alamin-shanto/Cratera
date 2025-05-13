@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { auth } from "../Firebase/firebase";
 import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -35,9 +36,11 @@ const Profile = () => {
         displayName: name,
         photoURL: photoURL,
       });
+      toast.success("Profile Updated successfully");
       setSuccess("Profile Updated successfully");
       setIsEditing(false);
     } catch (err) {
+      toast.error("Failed to update Profile");
       console.error("Update error", err);
       setError("Failed to update Profile");
     }

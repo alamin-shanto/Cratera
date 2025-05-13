@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -15,12 +16,14 @@ const LogIn = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setError(" ");
+    setError("");
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      toast.success("Logged in Successfully");
       navigate("/");
     } catch (err) {
+      toast.error("Invalid email or Password");
       setError("Invalid email or Password");
       console.error("login error", err);
     }
@@ -31,8 +34,10 @@ const LogIn = () => {
 
     try {
       await signInWithPopup(auth, provider);
+      toast.success("Logged in Successfully");
       navigate("/");
     } catch (err) {
+      toast.error("Google Sign In Failed");
       setError("Google Sign In Failed");
       console.error("login error", err);
     }
@@ -42,14 +47,14 @@ const LogIn = () => {
     <div className="flex justify-center items-center m-5 lg:my-20">
       <form
         onSubmit={handleSubmit}
-        className="bg-blue-200 p-5 rounded-2xl shadow-md w-full max-w-sm"
+        className="bg-[var(--n)] p-5 rounded-2xl shadow-md w-full max-w-sm"
       >
         <h2 className="text-center font-extrabold text-2xl my-5">Login Page</h2>
         {error && <p className="text-red-500 mb-5 text-center">{error}</p>}
         <input
           type="email"
           placeholder="Email"
-          className="bg-white w-full mb-5 p-3 rounded-2xl"
+          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -57,11 +62,22 @@ const LogIn = () => {
         <input
           type="password"
           placeholder="Password"
-          className="bg-white w-full mb-5 p-3 rounded-2xl"
+          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+
+        <div className="flex justify-between mb-5">
+          <p></p>
+          <Link
+            to="/forgot-password"
+            state={{ email }}
+            className="hover:text-blue-400"
+          >
+            Forgot Password?
+          </Link>
+        </div>
 
         <button
           type="submit"
@@ -80,7 +96,10 @@ const LogIn = () => {
 
         <p className="text-center mt-2">
           Don't have an Account?{" "}
-          <Link to="/register" className="text-blue-900 font-bold">
+          <Link
+            to="/register"
+            className="text-blue-300 hover:text-blue-500 font-bold"
+          >
             Sign up here
           </Link>{" "}
         </p>

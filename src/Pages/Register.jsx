@@ -5,12 +5,15 @@ import {
   updateProfile,
 } from "firebase/auth";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { auth } from "../Firebase/firebase";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, db } from "../Firebase/firebase";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -28,10 +31,22 @@ const Register = () => {
       );
       await updateProfile(userCredentials.user, {
         displayName: `${firstname} ${lastname}`,
+        photoURL: photoURL,
       });
+
+      await setDoc(doc(db, "users", userCredentials.user.uid), {
+        uid: userCredentials.user.uid,
+        displayName: `${firstname} ${lastname}`,
+        photoURL: photoURL,
+        email: email,
+        createdAt: serverTimestamp(),
+      });
+
+      toast.success("Account created Successfully");
       navigate("/");
     } catch (error) {
-      console.error("SIgnup error", error);
+      toast.error("Sign Up Failed, Try Again");
+      console.error("Signup error", error);
       setError("Signup failed try again");
     }
   };
@@ -39,9 +54,22 @@ const Register = () => {
   const handleGoogleSignup = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+
+      const user = result.user;
+
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        email: user.email,
+        createdAt: serverTimestamp(),
+      });
+
+      toast.success("Signed up with Google!");
       navigate("/");
     } catch (error) {
+      toast.error("Google Sign UP Failed, Try again.");
       console.error("Google Sign up error", error);
       setError("Google Sign Up Failed. Try Again");
     }
@@ -50,14 +78,14 @@ const Register = () => {
     <div className="flex justify-center items-center m-5 lg:my-20">
       <form
         onSubmit={handleSignup}
-        className="bg-blue-200 p-5 rounded-2xl shadow-md w-full max-w-sm"
+        className="bg-[var(--n)] p-5 rounded-2xl shadow-md w-full max-w-sm"
       >
         {error && <p className="text-red-500 mb-5 text-center">{error}</p>}
         <h2 className="text-center font-extrabold text-2xl my-5">Sign up</h2>
         <input
           type="text"
           placeholder="First Name"
-          className="bg-white w-full mb-5 p-3 rounded-2xl"
+          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
           value={firstname}
           onChange={(e) => setFirstname(e.target.value)}
           required
@@ -65,15 +93,23 @@ const Register = () => {
         <input
           type="text"
           placeholder="Last Name"
-          className="bg-white w-full mb-5 p-3 rounded-2xl"
+          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
           value={lastname}
           onChange={(e) => setLastname(e.target.value)}
           required
         />
         <input
+          type="text"
+          placeholder="PhotoURL"
+          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
+          value={photoURL}
+          onChange={(e) => setPhotoURL(e.target.value)}
+          required
+        />
+        <input
           type="email"
           placeholder="Email"
-          className="bg-white w-full mb-5 p-3 rounded-2xl"
+          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -81,7 +117,7 @@ const Register = () => {
         <input
           type="password"
           placeholder="Password"
-          className="bg-white w-full mb-5 p-3 rounded-2xl"
+          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -101,7 +137,10 @@ const Register = () => {
         </button>
         <p className="text-center mt-2">
           Already have an Account?{" "}
-          <Link to="/login" className="text-blue-900 font-bold">
+          <Link
+            to="/login"
+            className="text-blue-300 hover:text-blue-500 font-bold"
+          >
             Log in here
           </Link>{" "}
         </p>

@@ -13,6 +13,7 @@ import Blogs from "../Pages/Blogs";
 import Contacts from "../Pages/Contacts";
 import Terms from "../Pages/Terms";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import ForgotPassword from "../Pages/ForgotPassword";
 
 const Router = () => {
   return (
@@ -49,6 +50,7 @@ const Router = () => {
         ></Route>
         <Route path="terms" element={<Terms />}></Route>
         <Route path="privacy" element={<PrivacyPolicy />}></Route>
+        <Route path="forgot-password" element={<ForgotPassword />}></Route>
       </Route>
       <Route path="*" element={<NotFound />}></Route>
     </Routes>

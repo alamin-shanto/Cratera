@@ -12,6 +12,8 @@ import {
 } from "firebase/firestore";
 import { useLocation } from "react-router-dom";
 import NoSubscription from "./NoSubscription";
+import toast from "react-hot-toast";
+import { Star } from "lucide-react";
 
 const Subscribe = () => {
   const [subs, setSubs] = useState([]);
@@ -48,7 +50,7 @@ const Subscribe = () => {
 
     const ratingValue = Number(rating);
     if (ratingValue < 1 || ratingValue > 5) {
-      alert("Rating must be between 1 to 5");
+      toast.error("Rating must be between 1 to 5");
       return;
     }
     try {
@@ -65,7 +67,9 @@ const Subscribe = () => {
       setReviewText("");
       setRating("");
       await loadReviews();
+      toast.success("Reviews added Successfully");
     } catch (error) {
+      toast.error("Failed to add Review.");
       console.error("Error submitting review:", error);
     }
   };
@@ -76,7 +80,9 @@ const Subscribe = () => {
       await deleteDoc(subRef);
       setSubs((prevSubs) => prevSubs.filter((sub) => sub.id !== subId));
       console.log("Subscription canceled Successfully");
+      toast.success("Subscription canceled Successfully");
     } catch (error) {
+      toast.error("Failed to Cancel Subscription.");
       console.log("error canceling subscription", error);
     }
   };
@@ -107,10 +113,12 @@ const Subscribe = () => {
               serviceImage: service.thumbnail,
               ServicePrice: service.price,
             };
+            toast.success(`Subscribed to ${service.name}`);
             console.log("Adding Subscription", newSub);
             await addDoc(subsRef, newSub);
           } else {
             console.log("Subscription already exist");
+            toast("Subscription already exist");
           }
         }
 
@@ -121,6 +129,7 @@ const Subscribe = () => {
           .filter((sub) => sub.userName === user.displayName);
         setSubs(mySubs);
       } catch (error) {
+        toast.error("Failed to add Subscription.");
         console.error("error fetching subscriptions:", error);
       }
     };
@@ -204,11 +213,19 @@ const Subscribe = () => {
               reviews.map((r) => (
                 <div
                   key={r.id}
-                  className="border p-5 mb-5 rounded-2xl shadow-lg bg-[var(--b2)]"
+                  className="border p-5 mb-5 rounded-2xl shadow-lg bg-[#FAF9F6]"
                 >
-                  <p className="font-semibold">{r.userName}</p>
-                  <p className="">{r.rating}</p>
-                  <p className="">{r.reviewText}</p>
+                  <p className="font-bold text-[var(--n)] text-2xl">
+                    {r.userName}
+                  </p>
+                  <div className="flex items-center">
+                    <p className="font-semibold text-[var(--n)] text-2xl">
+                      {r.rating}
+                    </p>
+                    <Star className="text-[var(--n)]" />
+                  </div>
+
+                  <p className="text-[var(--n)]">{r.reviewText}</p>
                 </div>
               ))
             )}

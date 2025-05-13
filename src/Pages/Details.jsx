@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const Details = () => {
@@ -64,7 +65,10 @@ const Details = () => {
           </p>
         </div>
         <button
-          onClick={() => navigate("/subscribe", { state: { service } })}
+          onClick={() => {
+            toast.success(`Subscribed Successfully to ${service.name}`);
+            navigate("/subscribe", { state: { service } });
+          }}
           className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-2xl mt-5 font-bold"
         >
           Subscribe Now
