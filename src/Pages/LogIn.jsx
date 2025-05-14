@@ -7,11 +7,13 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import toast from "react-hot-toast";
+import { Eye, EyeOff } from "lucide-react";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -59,14 +61,25 @@ const LogIn = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <input
-          type="password"
-          placeholder="Password"
-          className="bg-white w-full mb-5 p-3 rounded-2xl text-[var(--n)]"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+
+        <div className="relative mb-5">
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            className="bg-white w-full p-3 rounded-2xl text-[var(--n)]"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword((prev) => !prev)}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[var(--n)]"
+            aria-level="Toggle password visibility"
+          >
+            {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
+          </button>
+        </div>
 
         <div className="flex justify-between mb-5">
           <p></p>

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const NotFound = () => {
   const navigate = useNavigate();
   return (
-    <div className="fixed inset-0 bg-white m-10 lg:m-20 text-center p-10">
+    <div className="fixed inset-0 bg-white p-10 lg:p-20 text-center flex flex-col justify-center items-center">
       <div className="max-w-96 object-cover mx-auto">
         <img src="assets/glitch-error-404-page_23-2148105404.avif" alt="" />
       </div>
