@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import LoadingSpinner from "./LoadingSpinner";
 
 const SubscriptionBox = () => {
   const [services, setServices] = useState([]);
   const [showAll, setShowAll] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,8 +14,10 @@ const SubscriptionBox = () => {
       .then((data) => {
         console.log("Fetched Services:", data);
         setServices(data);
+        setLoading(false);
       })
       .catch((err) => console.error("Failed to load Services", err));
+    setLoading(false);
   }, []);
 
   const displayService = showAll ? services : services.slice(0, 6);
@@ -22,6 +26,7 @@ const SubscriptionBox = () => {
     navigate(`/service/${service.id}`, { state: { service } });
   };
 
+  if (loading) return <LoadingSpinner />;
   return (
     <section>
       <h2 className="Text-3xl lg:text-4xl font-extrabold my-10 ml-5 lg:ml-0 text-[var(--n)]">

@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
+import LoadingSpinner from "./LoadingSpinner";
 
 const Layout = () => {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 700);
+
+    return () => {
+      clearTimeout(timeout);
+      setLoading(false);
+    };
+  }, [location.pathname]);
+
   return (
     <div>
       <NavBar></NavBar>
       <div className="min-h-[40vh]">
-        <Outlet></Outlet>
+        {loading ? <LoadingSpinner /> : <Outlet />}
       </div>
       <Footer></Footer>
     </div>
